@@ -1,5 +1,6 @@
 import {REGIONS,BASES,MONTHS,defaults,restore,trip,span,matches,summary,issues,tryAdd,schedulable,toICS,days} from "./core.mjs";
-const KEY="stoneridge-conference-circuit-v1";
+const planName=new URLSearchParams(location.search).get("plan");
+const KEY="stoneridge-conference-circuit-v1"+(planName&&/^[a-zA-Z0-9_-]{1,40}$/.test(planName)?":"+planName:"");
 const $=s=>document.querySelector(s),esc=x=>String(x??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c])),money=n=>new Intl.NumberFormat("en-US",{style:"currency",currency:"USD",maximumFractionDigits:0}).format(n),num=n=>new Intl.NumberFormat("en-US").format(n);
 const labelMonth=m=>new Date(m+"-15T12:00:00Z").toLocaleDateString("en-US",{month:"short",year:"numeric",timeZone:"UTC"});
 const fmt=s=>s?new Date(s+"T12:00:00Z").toLocaleDateString("en-US",{month:"short",day:"numeric",year:"numeric",timeZone:"UTC"}):"Dates to confirm";

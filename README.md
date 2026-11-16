@@ -1,7 +1,7 @@
 # Conference Circuit
 A yes-or-no planner for one traveler choosing medical-practice conferences in Texas, Oklahoma and Louisiana.
 
-Live app: https://sre-2025.github.io/medical-conference-picker/
+Live app: https://sre-2025.github.io/medical-conference-picker/?plan=2027
 
 ## Use it
 1. Choose states, cities and your home base.
@@ -34,8 +34,8 @@ Changing preferences can make existing choices conflict. The itinerary flags tho
 
 ## Development
 Buildless HTML/CSS/ES modules; no framework or package install required.
-- \`npm start\`: local preview on http://127.0.0.1:4178
-- \`npm test\`: catalog validation, travel/availability conflicts, budget limits, missing-data behavior, eligibility discounts and calendar export.
+- `npm start`: local preview on http://127.0.0.1:4178
+- `npm test`: catalog validation, travel/availability conflicts, budget limits, missing-data behavior, eligibility discounts and calendar export.
 
-Data is in \`data.json\`. Organizer facts are public; user choices remain in local storage. To refresh research, edit source-backed event records, preserve IDs and rerun tests.
+Data is in `data.json`. Organizer facts are public; user choices remain in local storage. To refresh research, edit source-backed event records, preserve IDs and rerun tests.
 
