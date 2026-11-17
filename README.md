@@ -10,7 +10,7 @@ Live app: https://sre-2025.github.io/medical-conference-picker/?plan=2027
 4. Answer Yes, No or Maybe for each conference.
 5. Review the solo itinerary and export JSON, CSV or calendar holds.
 
-Answers and manually entered booth quotes are saved in the current browser only. They are not sent to GitHub. Export a JSON backup to move between devices. The site does not purchase booths, make reservations or contact organizers.
+Answers, manually entered booth quotes and user-entered leads are saved in the current browser only. They are not sent to GitHub. Export a JSON backup to move between devices. The site does not purchase booths, make reservations or contact organizers.
 
 ## Research
 Conference fee research checked November 17, 2026. The catalog contains 188 distinct event / recurring-edition entries, 126 posted date ranges, 49 published commercial exhibit prices and 27 sourced attendance benchmarks / forecasts. Dates without a confirmed physical city remain on the watchlist. Pending dates and unconfirmed physical locations remain watchlist entries.
@@ -32,6 +32,13 @@ Choose **Exhibit fee only - lowest** to compare booth costs independently of tra
 
 New organizer facts also resolve APTA Louisiana's August 13-15, 2027 Baton Rouge meeting and TNS Summer's July 23-24 San Antonio dates. The IMA entry is correctly named Independent Medical Alliance, with the same saved event ID.
 
+## Original workbook handoff
+The complete three-tab extraction of `Medical_Conference_Circuit_2027.xlsx` is preserved in `research/original-workbook.json`. All 150 original event IDs and every one of their 26 column values remain in the expanded catalog. Cards expose the original dated contacts, access, booking/inquiry and lead-list terms, alongside current research. These operational fields are read-only research snapshots, not live booking records. All original fields are available in the expanded original-record view.
+
+The Lead pipeline keeps the original 24 columns, supports local editing and CSV export, and travels with JSON backups. Importing an older backup without leads preserves existing lead rows. Organizer permission and the Longview-area chiropractic outreach hold remain explicit; no outreach is sent. The original preparation, QR-form and follow-up workflow is preserved as guidance. See [HANDOFF_AUDIT.md](HANDOFF_AUDIT.md) for the complete field and requirement comparison, validation results and limits on recovering the earlier chat transcript.
+
+Original budget defaults are restored: $300 extras per show, $1,000 kit once, optional $350 TexMed lead retrieval and editable 10% contingency. Existing saved allowances are preserved. The old $700 flat travel/lodging allowance stays archival because the later detailed solo travel rules supersede it. Circuit contingency is computed once over the known subtotal including the kit.
+
 ## Planning assumptions
 Each event is a separate round trip from the chosen city center. Arrive on the opening show day and leave on the final show day. Out-of-town hotel nights equal selected show days minus one: two days = one night, three days = two nights, one day = zero nights. No hotel is added before opening or after closing. Trips within 60 estimated road miles are local and use zero hotel nights. Published exhibit dates are used by default where available; otherwise full conference dates are held. No automatic setup or extra travel days are added. An optional full free day between shows is spent at home and adds no hotel or meal cost. Confirm transport schedules and required vendor move-in before booking; date checks alone do not verify same-day travel feasibility. Older saved plans retain their choices and quotes; their legacy setup preference is ignored.
 
@@ -43,6 +50,8 @@ Changing preferences can make existing choices conflict. The itinerary flags tho
 Buildless HTML/CSS/ES modules; no framework or package install required.
 - `npm start`: local preview on http://127.0.0.1:4178
 - `npm test`: catalog validation, travel/availability conflicts, budget limits, missing-data behavior, eligibility discounts and calendar export.
+- `node research/handoff-validation.mjs`: compare every extracted original workbook cell and event ID with the preserved archive.
+- `node research/app-regression.mjs`: check local lead editing, backup compatibility and budget/CSV reconciliation without touching a user's browser.
 
 Data is in `data.json`. Organizer facts are public; user choices remain in local storage. To refresh research, edit source-backed event records, preserve IDs and rerun tests.
 

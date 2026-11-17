@@ -7,7 +7,7 @@ export const stamp=s=>Date.parse(s+"T12:00:00Z")/DAY;
 export const iso=n=>new Date(n*DAY).toISOString().slice(0,10);
 export const dateAdd=(s,n)=>iso(stamp(s)+n);
 export const days=(a,b)=>Math.round(stamp(b)-stamp(a));
-export function defaults(events){return {states:Object.fromEntries(STATES.map(([state])=>[state,true])),regions:Object.fromEntries(REGIONS.map(r=>[r[0],true])),months:Object.fromEntries(MONTHS.map(m=>[m,true])),categories:Object.fromEntries(events.map(e=>[e.category,true])),base:"Austin",drive:true,rest:true,exhibitOnly:true,includeWatch:true,includeUnknownFee:true,limitEvent:false,maxEvent:4000,limitTotal:false,maxTotal:15000,limitMonth:false,maxMonth:2,requireSize:false,minSize:300,requireDoctors:false,minDoctors:100,allowDoctorEstimates:true,includeUnknownSize:true,useHistorical:true,useHistoricalFees:false,smallBusiness:false,hotel:175,food:65,parking:25,mileRate:0.55,flight:450,extras:250,kit:750,blocked:[]};}
+export function defaults(events){return {states:Object.fromEntries(STATES.map(([state])=>[state,true])),regions:Object.fromEntries(REGIONS.map(r=>[r[0],true])),months:Object.fromEntries(MONTHS.map(m=>[m,true])),categories:Object.fromEntries(events.map(e=>[e.category,true])),base:"Austin",drive:true,rest:true,exhibitOnly:true,includeWatch:true,includeUnknownFee:true,limitEvent:false,maxEvent:4000,limitTotal:false,maxTotal:15000,limitMonth:false,maxMonth:2,requireSize:false,minSize:300,requireDoctors:false,minDoctors:100,allowDoctorEstimates:true,includeUnknownSize:true,useHistorical:true,useHistoricalFees:false,smallBusiness:false,hotel:175,food:65,parking:25,mileRate:0.55,flight:450,extras:300,kit:1000,contingency:10,texmedLeadRetrieval:true,texmedLeadFee:350,blocked:[]};}
 export function miles(a,b){if(!a||!b)return null;const rad=x=>x*Math.PI/180;const dlat=rad(b[0]-a[0]),dlon=rad(b[1]-a[1]);return 3958.8*2*Math.asin(Math.sqrt(Math.sin(dlat/2)**2+Math.cos(rad(a[0]))*Math.cos(rad(b[0]))*Math.sin(dlon/2)**2));}
 export function historicalFee(e){
  const early=h=>/\bearly\b|\badvance\b|\bdeadline\b/i.test(h.label||"");
@@ -25,6 +25,8 @@ export function feeDetails(e,p,quotes={}){
 export function eventFee(e,p,quotes={}){return feeDetails(e,p,quotes).amount;}
 export function compareBoothFees(a,b,p,quotes={}){const x=eventFee(a,p,quotes),y=eventFee(b,p,quotes);return (x===null)-(y===null)||(x??0)-(y??0)||a.name.localeCompare(b.name);}
 export function span(e,p){if(!e.start||!e.end)return null;return {start:p.exhibitOnly&&e.exhibitStart?e.exhibitStart:e.start,end:p.exhibitOnly&&e.exhibitEnd?e.exhibitEnd:e.end};}
+const cents=n=>Math.round((n+Number.EPSILON)*100)/100;
+const contingencyFor=(amount,p)=>cents(amount*(Number.isFinite(p.contingency)&&p.contingency>=0?p.contingency:0)/100);
 export function trip(e,p,quotes={}){
  const s=span(e,p),straight=miles(BASES[p.base],e.coordinates),road=straight===null?null:Math.round(straight*1.2),local=road!==null&&road<=60;
  const duration=s?days(s.start,s.end)+1:null;
@@ -35,8 +37,10 @@ export function trip(e,p,quotes={}){
  const meals=tripDays===null?null:tripDays*p.food;
  const parking=duration===null?null:duration*p.parking;
  const feeInfo=feeDetails(e,p,quotes),fee=feeInfo.amount;
- const minimum=[fee,transport,hotel,meals,parking,p.extras].filter(Number.isFinite).reduce((a,b)=>a+b,0);
- return {fee,feeInfo,road,local,duration,tripDays,nights,transport,hotel,meals,parking,extras:p.extras,minimum,incomplete:feeInfo.provisional||transport===null||duration===null,
+ const retrieval=e.id==="TX06"&&p.texmedLeadRetrieval?p.texmedLeadFee:0;
+ const baseMinimum=cents([fee,transport,hotel,meals,parking,p.extras,retrieval].filter(Number.isFinite).reduce((a,b)=>a+b,0));
+ const contingency=contingencyFor(baseMinimum,p),minimum=cents(baseMinimum+contingency);
+ return {fee,feeInfo,road,local,duration,tripDays,nights,transport,hotel,meals,parking,extras:p.extras,retrieval,baseMinimum,contingency,minimum,incomplete:feeInfo.provisional||transport===null||duration===null,
  from:s?s.start:null,to:s?s.end:null};
 }
 export function doctorBenchmark(e,p={allowDoctorEstimates:true}){
@@ -63,7 +67,8 @@ export function matches(e,p,quotes={}){
 }
 export function summary(selected,p,quotes={}){
  const trips=selected.map(e=>trip(e,p,quotes));
- return {count:selected.length,scheduled:selected.filter(schedulable).length,watch:selected.filter(e=>!schedulable(e)).length,minimum:trips.reduce((s,t)=>s+t.minimum,0)+(selected.length?p.kit:0),missingFees:trips.filter(t=>t.feeInfo.provisional).length,historicalFees:trips.filter(t=>t.feeInfo.kind==="historical").length,incomplete:trips.some(t=>t.incomplete),days:trips.filter(t=>t.tripDays!==null).reduce((s,t)=>s+t.tripDays,0)};
+ const kit=selected.length?p.kit:0,baseMinimum=cents(trips.reduce((s,t)=>s+t.baseMinimum,0)+kit),contingency=contingencyFor(baseMinimum,p);
+ return {count:selected.length,scheduled:selected.filter(schedulable).length,watch:selected.filter(e=>!schedulable(e)).length,kit,retrieval:cents(trips.reduce((s,t)=>s+t.retrieval,0)),baseMinimum,contingency,minimum:cents(baseMinimum+contingency),missingFees:trips.filter(t=>t.feeInfo.provisional).length,historicalFees:trips.filter(t=>t.feeInfo.kind==="historical").length,incomplete:trips.some(t=>t.incomplete),days:trips.filter(t=>t.tripDays!==null).reduce((s,t)=>s+t.tripDays,0)};
 }
 export function issues(selected,p,quotes={}){
  const out=[];for(let i=0;i<selected.length;i++){const e=selected[i];if(schedulable(e)&&blocked(e,p))out.push({ids:[e.id],type:"calendar",text:e.name+" overlaps your unavailable dates."});if(schedulable(e)&&matches(e,p,quotes).includes("Show falls outside chosen months"))out.push({ids:[e.id],type:"calendar",text:e.name+" falls outside your available months."});for(let j=i+1;j<selected.length;j++)if(conflict(e,selected[j],p))out.push({ids:[e.id,selected[j].id],type:"calendar",text:e.name+" conflicts with "+selected[j].name+" including show dates and your between-show buffer."});if(p.limitEvent&&trip(e,p,quotes).minimum>p.maxEvent)out.push({ids:[e.id],type:"budget",text:e.name+" exceeds your event cap."});}

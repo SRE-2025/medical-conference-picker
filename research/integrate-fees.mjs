@@ -43,7 +43,7 @@ Object.assign(data.events.find(e=>e.id==='TX90'), {
 Object.assign(data.events.find(e=>e.id==='LA21'), {
   city:'Baton Rouge', coordinates:[30.451,-91.187], venue:'Renaissance Hotel Baton Rouge',
   start:'2027-08-13', end:'2027-08-15', dateStatus:'Dates posted', location:'In-state venue posted',
-  notes:'Organizer posts August 13-15, 2027 at Renaissance Hotel in Baton Rouge. ' + data.events.find(e=>e.id==='LA21').notes,
+  notes:data.events.find(e=>e.id==='LA21').notes.startsWith('Organizer posts August 13-15, 2027') ? data.events.find(e=>e.id==='LA21').notes : 'Organizer posts August 13-15, 2027 at Renaissance Hotel in Baton Rouge. ' + data.events.find(e=>e.id==='LA21').notes,
   checked:'2026-11-17'
 });
 const tns = data.events.find(e=>e.id==='TX52');

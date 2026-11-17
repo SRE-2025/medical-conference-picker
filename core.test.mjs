@@ -1,4 +1,4 @@
-import test from "node:test";import assert from "node:assert/strict";import fs from "node:fs";import {defaults,trip,summary,tryAdd,issues,conflict,matches,toICS,restore,dateAdd,doctorBenchmark,REGIONS,STATES,schedulable,feeDetails,historicalFee,compareBoothFees} from "./core.mjs";
+import test from "node:test";import assert from "node:assert/strict";import fs from "node:fs";import {defaults,trip,summary,tryAdd,issues,conflict,matches,toICS,restore,dateAdd,doctorBenchmark,REGIONS,STATES,BASES,schedulable,feeDetails,historicalFee,compareBoothFees} from "./core.mjs";
 const catalog=JSON.parse(fs.readFileSync(new URL("./data.json",import.meta.url))),events=catalog.events;
 const get=n=>events.find(e=>e.name.includes(n));
 test("catalog has distinct IDs, sourced facts and consistent fee metadata",()=>{assert.equal(events.length,188);assert.equal(new Set(events.map(e=>e.id)).size,188);assert.equal(events.filter(e=>Number.isFinite(e.fee)).length,catalog.counts.priced);for(const e of events){assert.match(e.priceUrl,/^https:/);if(e.fee!==null)assert.ok(Number.isFinite(e.fee)&&e.fee>=0);if(e.attendance){assert.ok(e.attendance.count>0);assert.match(e.attendance.source,/^https:/);}}});
@@ -109,4 +109,36 @@ test("sourced fee histories and conditional options retain amount, year and sour
  for(const e of events){for(const h of [...(e.feeHistory||[]),...(e.feeSavings||[])]){assert.ok(Number.isInteger(h.year));assert.ok(Number.isFinite(h.amount)&&h.amount>=0);assert.match(h.source,/^https:\/\//);assert.ok(h.label);}
  if(e.feeAudit){assert.equal(e.feeAudit.checked,"2026-11-17");assert.ok(["current","historical","not_public","restricted","unresolved"].includes(e.feeAudit.status));assert.ok(e.feeAudit.summary);assert.ok(Array.isArray(e.feeAudit.sources));}}
 });
+
+test("TexMed lead retrieval is an editable add-on for TX06 only",()=>{
+ const p=defaults(events),e={...events.find(e=>e.id==="TX06"),fee:1000,coordinates:BASES.Austin,start:"2027-04-01",end:"2027-04-01",exhibitStart:null,exhibitEnd:null};
+ const t=trip(e,p);assert.equal(p.extras,300);assert.equal(p.kit,1000);assert.equal(p.contingency,10);assert.equal(t.retrieval,350);assert.equal(t.baseMinimum,1740);assert.equal(t.contingency,174);assert.equal(t.minimum,1914);
+ assert.equal(trip({...e,id:"another"},p).retrieval,0);
+ assert.equal(trip(e,{...p,texmedLeadRetrieval:false}).minimum,1529);
+ assert.equal(trip(e,{...p,texmedLeadFee:200}).retrieval,200);
+});
+
+test("circuit contingency includes the reusable kit once without compounding event reserves",()=>{
+ const p=defaults(events),a={...events[0],id:"TX06",fee:1000,coordinates:BASES.Austin,start:"2027-04-01",end:"2027-04-01",exhibitStart:null,exhibitEnd:null},b={...a,id:"other"};
+ const s=summary([a,b],p);assert.equal(s.kit,1000);assert.equal(s.retrieval,350);assert.equal(s.baseMinimum,4130);assert.equal(s.contingency,413);assert.equal(s.minimum,4543);
+ assert.equal(s.minimum,trip(a,p).minimum+trip(b,p).minimum+1100);
+ const empty=summary([],p);assert.equal(empty.minimum,0);assert.equal(empty.kit,0);assert.equal(empty.contingency,0);
+ const noReserve=summary([a,b],{...p,contingency:0});assert.equal(noReserve.minimum,s.baseMinimum);assert.equal(noReserve.contingency,0);
+});
+
+test("contingency and optional retrieval cannot make missing fees complete or bypass budget caps",()=>{
+ const p=defaults(events),e={...events[0],id:"TX06",fee:null,conditionalFee:null,feeHistory:[],coordinates:BASES.Austin,start:"2027-04-01",end:"2027-04-01",exhibitStart:null,exhibitEnd:null};
+ const t=trip(e,p);assert.equal(t.baseMinimum,740);assert.equal(t.contingency,74);assert.equal(t.minimum,814);assert.equal(t.incomplete,true);assert.equal(summary([e],p).missingFees,1);
+ p.limitEvent=true;p.maxEvent=800;assert.ok(matches(e,p).includes("Over event budget"));assert.equal(tryAdd(e,[],p).ok,false);
+ p.limitEvent=false;p.limitTotal=true;p.maxTotal=1900;assert.equal(tryAdd(e,[],p).ok,false);
+});
+
+test("saved allowances and choices survive new workbook-based defaults",()=>{
+ const e=events[0],old={...defaults(events),extras:250,kit:750,hotel:155};delete old.contingency;delete old.texmedLeadRetrieval;delete old.texmedLeadFee;
+ const r=restore({version:1,preferences:old,decisions:{[e.id]:"later"},quotes:{[e.id]:1100}},events);
+ assert.equal(r.preferences.extras,250);assert.equal(r.preferences.kit,750);assert.equal(r.preferences.hotel,155);assert.equal(r.preferences.contingency,10);assert.equal(r.preferences.texmedLeadRetrieval,true);assert.equal(r.preferences.texmedLeadFee,350);assert.equal(r.decisions[e.id],"later");assert.equal(r.quotes[e.id],1100);
+ const custom=restore({version:1,preferences:{...old,contingency:0,texmedLeadRetrieval:false,texmedLeadFee:225},decisions:{}},events);
+ assert.equal(custom.preferences.contingency,0);assert.equal(custom.preferences.texmedLeadRetrieval,false);assert.equal(custom.preferences.texmedLeadFee,225);
+});
+
 
