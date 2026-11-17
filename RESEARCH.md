@@ -1,7 +1,19 @@
 # Conference coverage audit
 Checked November 17, 2026. Footprint: Texas, Oklahoma, Louisiana and Arkansas. Planning window: December 2026 through December 2027.
 
-## What changed
+## November 17 fee audit
+Reviewed all 188 entries for current and past commercial exhibit fees, smaller packages, early deadlines and eligibility conditions. The catalog now has 49 published prices, 46 event series with exact-year historical benchmarks and 28 entries with alternative or conditional packages. Audit outcomes are 48 current rechecks, 41 historical, 52 without a public price on reviewed sources, 17 restricted and 30 unresolved. These labels describe the review, not guaranteed organizer acceptance or inventory. DFUpdate's previously verified December 2026 rate remains numeric while its failed fresh recheck is disclosed.
+
+See [the complete fee audit](FEE_RESEARCH.md) and [independent checks](research/REVIEW.md). The four research patch files preserve assignment coverage and evidence. `node research/validate-fees.mjs` validates the merged catalog; `node research/integrate-fees.mjs` rebuilds the catalog and audit from those patches.
+
+Undated Southern Endocrine and LPTA Spring offers remain quote-needed; their posted amounts are recorded only in review notes. SABCS's price per square foot is not converted to a booth fee without a verified minimum footprint. Nonprofit, member, first-time and materials-only offers are separate. Standard historical rates take priority over expired early rates in optional estimates.
+
+Organizer details resolved during this pass:
+- [APTA Louisiana](https://aptala.org/Main/LPTA/Annual_Meetings/LPTA_Spring_and_Fall_Meetings.aspx): August 13-15, 2027, Renaissance Hotel Baton Rouge.
+- [TNS 2027 exhibitor application](https://tns.memberclicks.net/assets/Sylvia/2027%20TNS%20Exhibitor%20Application%20-%20Fillable.pdf): Summer July 23-24, San Antonio; exact venue still pending.
+- [IMA save-the-date](https://imahealth.org/save-the-date-2027-ima-medical-education-conference/): Independent Medical Alliance, April 30-May 1, 2027, Omni Las Colinas. Corrected the expanded association name while retaining its ID.
+
+## Earlier coverage expansion
 - Catalog: 150 to 188 event/recurring-edition entries; all prior IDs retained.
 - Podiatry/foot-care options: 2 to 14. Ten focus on DPMs or diabetic-foot care; four have related orthopaedic or O&P audiences explicitly labeled.
 - Arkansas: 12 entries. Dental and chiropractic additions also cover Oklahoma and Louisiana.
@@ -48,3 +60,4 @@ Reviewed Arkansas State Dental Association, district dental society announcement
 - ACPA December, TPMA Annual and other events publish prior-day setup windows; confirm opening-day setup permission. The user's no-before/no-after hotel policy remains unchanged.
 - Commercial access is unverified for some clinical courses and smaller CE meetings; these are labeled clearly. A booth is not promised merely because a conference is listed.
 - This review covers publicly discoverable organizer calendars as of the check date. New 2027 announcements, private seminars and local meetings can appear later.
+
