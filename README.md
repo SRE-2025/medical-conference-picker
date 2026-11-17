@@ -7,7 +7,7 @@ Live app: https://sre-2025.github.io/medical-conference-picker/?plan=2027
 1. Choose states, cities and your home base.
 2. Mark available months and unavailable dates.
 3. Choose specialties and set your cost / show-size preferences.
-4. Answer Yes, No or Later for each conference.
+4. Answer Yes, No or Maybe for each conference.
 5. Review the solo itinerary and export JSON, CSV or calendar holds.
 
 Answers and manually entered booth quotes are saved in the current browser only. They are not sent to GitHub. Export a JSON backup to move between devices. The site does not purchase booths, make reservations or contact organizers.
