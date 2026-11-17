@@ -1,5 +1,5 @@
 # Conference Circuit
-A yes-or-no planner for one traveler choosing medical-practice conferences in Texas, Oklahoma and Louisiana.
+A yes-or-no planner for one traveler choosing medical-practice conferences in Texas, Oklahoma, Louisiana and Arkansas.
 
 Live app: https://sre-2025.github.io/medical-conference-picker/?plan=2027
 
@@ -13,7 +13,7 @@ Live app: https://sre-2025.github.io/medical-conference-picker/?plan=2027
 Answers and manually entered booth quotes are saved in the current browser only. They are not sent to GitHub. Export a JSON backup to move between devices. The site does not purchase booths, make reservations or contact organizers.
 
 ## Research
-Conference research checked November 16, 2026; historical audience research and same-day travel rules updated November 17, 2026. The catalog contains 150 distinct event / recurring-series entries, 98 posted date ranges, 22 current published commercial exhibit prices and 24 sourced attendance benchmarks / forecasts. Another 52 entries need their next dates confirmed. Pending dates and unconfirmed physical locations remain watchlist entries.
+Conference research checked November 16, 2026; historical audience research and same-day travel rules updated November 17, 2026. The catalog contains 188 distinct event / recurring-edition entries, 124 posted date ranges, 30 current published commercial exhibit prices and 27 sourced attendance benchmarks / forecasts. Dates without a confirmed physical city remain on the watchlist. Pending dates and unconfirmed physical locations remain watchlist entries.
 
 Every event has organizer links. Each size figure has its own source and basis; previous-year figures, typical annual figures, professional subsets and forecasts are labeled. Exhibitor counts and booth capacity are separate from attendee counts. These figures do not establish lead volume or the number of practice owners present.
 
@@ -44,3 +44,10 @@ Data is in `data.json`. Organizer facts are public; user choices remain in local
 Ten series have linked historical audience research. Two currently provide usable physician / dentist benchmarks: ASLMS 2025 about 369 physicians (calculated from 648 attendees × rounded 57% physician share), and TDA 2025 1,000 dentists (Trade Show Executive report). Dentistry is labeled separately from medical physicians. ASDS 2025's 127 residents / fellows in training are shown as a training audience and excluded from the minimum-count filter. TRS's 57% physician share is pooled 2022–2024 data without a matching total, so it is not converted into a headcount.
 
 ACC's MD/PhD/DO category includes medical students and is not a physician-only count. ATS audit totals, Aesthetic Next totals, TexMed's mixed attendees, AAHKS totals and TAFP symposium totals remain separate from doctor counts. Unknown doctor counts stay null. The cards include source, year, location, scope and limitations, and the physician / dentist sort and optional minimum-count filter use only reported or explicitly calculated counts. Exported CSVs include doctor benchmark fields and hotel nights. Doctor presence does not establish practice ownership, buying authority or visits to our booth.
+
+## Arkansas and specialty expansion — November 17, 2026
+Added 38 entries while preserving every existing event ID and the browser's saved answers/quotes. Arkansas has 12 entries and city filters for central Arkansas, Hot Springs, northwest Arkansas and unconfirmed locations. There are 14 podiatry/foot-care options: 10 DPM/diabetic-foot meetings and four explicitly labeled related orthopaedic or O&P meetings. The audience step has a Podiatry, dental & chiropractic preset.
+
+The public-calendar coverage review and exclusions are in [RESEARCH.md](RESEARCH.md). No announced 2027 in-state Arkansas podiatry conference was found; historical Little Rock 2023 is not presented as a future meeting. Pending next editions keep null dates/prices. Membership, capacity, ticket fees and old booth rates are not treated as current attendance or commercial pricing. Two distinct December 5–6 Little Rock chiropractic seminars remain separate and conflict for one traveler.
+
+Current TPMA Annual and Southwest Foot & Ankle dates and booth fees were verified. The Southwest vendor schedule contains a weekday/date inconsistency; exact exhibit end remains unresolved and the planner conservatively holds the full conference. Prior-day vendor setup requirements are described in notes but never automatically add hotel nights. Confirm permission for opening-day setup before buying space.
