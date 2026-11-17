@@ -13,7 +13,7 @@ Live app: https://sre-2025.github.io/medical-conference-picker/?plan=2027
 Answers and manually entered booth quotes are saved in the current browser only. They are not sent to GitHub. Export a JSON backup to move between devices. The site does not purchase booths, make reservations or contact organizers.
 
 ## Research
-Conference research checked November 16, 2026; historical audience research and same-day travel rules updated November 17, 2026. The catalog contains 188 distinct event / recurring-edition entries, 124 posted date ranges, 30 current published commercial exhibit prices and 27 sourced attendance benchmarks / forecasts. Dates without a confirmed physical city remain on the watchlist. Pending dates and unconfirmed physical locations remain watchlist entries.
+Conference fee research checked November 17, 2026. The catalog contains 188 distinct event / recurring-edition entries, 126 posted date ranges, 49 published commercial exhibit prices and 27 sourced attendance benchmarks / forecasts. Dates without a confirmed physical city remain on the watchlist. Pending dates and unconfirmed physical locations remain watchlist entries.
 
 Every event has organizer links. Each size figure has its own source and basis; previous-year figures, typical annual figures, professional subsets and forecasts are labeled. Exhibitor counts and booth capacity are separate from attendee counts. These figures do not establish lead volume or the number of practice owners present.
 
@@ -24,6 +24,13 @@ New research includes:
 - ASLMS 2025: 648 attendees and 377 exhibitor personnel, retained as a historical benchmark.
 - ACC.27: organizer headline 15,000+ attendees and 250+ exhibitors.
 - TAFP, LAFP, PHM, Southern Neurosurgical Society and other primary-source size figures are linked on the cards.
+
+## Exhibitor fee comparison
+All 188 entries received a fee review. There are 46 event series with sourced historical exhibit benchmarks and 28 with alternative packages or conditional rates. The [fee research audit](FEE_RESEARCH.md) contains every event's outcome and sources; the [independent review](research/REVIEW.md) records qualification and pricing checks. Inaccessible or unpublished information remains explicitly unresolved. One previously verified December 2026 DFUpdate fee is retained with its failed fresh recheck disclosed.
+
+Choose **Exhibit fee only - lowest** to compare booth costs independently of travel. Historical rates are shown with their year and source. Optional historical budgeting is off by default, prefers the latest standard rate over an expired early rate, and remains provisional until a current quote is entered. Nonprofit, member, first-time and other conditional packages never apply automatically. Current published fees and entered quotes take precedence. CSV exports include the fee basis, year and source. Existing saved Yes, No and Maybe answers are preserved.
+
+New organizer facts also resolve APTA Louisiana's August 13-15, 2027 Baton Rouge meeting and TNS Summer's July 23-24 San Antonio dates. The IMA entry is correctly named Independent Medical Alliance, with the same saved event ID.
 
 ## Planning assumptions
 Each event is a separate round trip from the chosen city center. Arrive on the opening show day and leave on the final show day. Out-of-town hotel nights equal selected show days minus one: two days = one night, three days = two nights, one day = zero nights. No hotel is added before opening or after closing. Trips within 60 estimated road miles are local and use zero hotel nights. Published exhibit dates are used by default where available; otherwise full conference dates are held. No automatic setup or extra travel days are added. An optional full free day between shows is spent at home and adds no hotel or meal cost. Confirm transport schedules and required vendor move-in before booking; date checks alone do not verify same-day travel feasibility. Older saved plans retain their choices and quotes; their legacy setup preference is ignored.
@@ -51,3 +58,4 @@ Added 38 entries while preserving every existing event ID and the browser's save
 The public-calendar coverage review and exclusions are in [RESEARCH.md](RESEARCH.md). No announced 2027 in-state Arkansas podiatry conference was found; historical Little Rock 2023 is not presented as a future meeting. Pending next editions keep null dates/prices. Membership, capacity, ticket fees and old booth rates are not treated as current attendance or commercial pricing. Two distinct December 5–6 Little Rock chiropractic seminars remain separate and conflict for one traveler.
 
 Current TPMA Annual and Southwest Foot & Ankle dates and booth fees were verified. The Southwest vendor schedule contains a weekday/date inconsistency; exact exhibit end remains unresolved and the planner conservatively holds the full conference. Prior-day vendor setup requirements are described in notes but never automatically add hotel nights. Confirm permission for opening-day setup before buying space.
+

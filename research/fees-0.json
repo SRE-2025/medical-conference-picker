@@ -1,0 +1,892 @@
+[
+  {
+    "id": "LA29",
+    "updates": {
+      "fee": 4700,
+      "priceType": "Published booth / table",
+      "priceUrl": "https://annualmeeting.aaaai.org/UserFiles/file/AM27ExhibitorProspectus.pdf",
+      "deadline": "2027-01-06",
+      "includes": "10x10 inline booth; drape, identification sign, five booth staff badges and one exhibitor/delegate badge per 100 sq ft. Flooring, furniture, utilities and services extra.",
+      "feeAudit": {
+        "checked": "2026-11-17",
+        "status": "current",
+        "summary": "2027 prospectus: standard 10x10 inline costs $4,700 ($47/sq ft); corner $5,000. Full payment January 6 avoids 10% late fee. Mandatory flooring is extra; setup must be show-ready the prior evening, so confirm alternate same-day arrangements.",
+        "sources": [
+          "https://annualmeeting.aaaai.org/UserFiles/file/AM27ExhibitorProspectus.pdf"
+        ]
+      },
+      "feeHistory": [
+        {
+          "year": 2026,
+          "amount": 4700,
+          "label": "2026 standard 10x10 inline",
+          "source": "https://annualmeeting.aaaai.org/UserFiles/file/am26-ExhibPro-FINAL.pdf",
+          "conditions": "2026 Philadelphia inline $47/sq ft; 100 sq ft booth totals $4,700. Same base rate as 2027, with extras separate."
+        }
+      ]
+    }
+  },
+  {
+    "id": "LA15",
+    "updates": {
+      "fee": null,
+      "priceType": "Organizer lists USD 2,500; confirm 2027 quote",
+      "priceUrl": "https://www.southernendocrine.org/exhibitor",
+      "includes": "One exhibitor table, one representative at table and one sponsor registration.",
+      "feeAudit": {
+        "checked": "2026-11-17",
+        "status": "unresolved",
+        "summary": "Organizer lists an entry exhibitor table at USD 2,500 versus USD 4,500 Silver on an undated package page. The same page links a named 2027 prospectus and a March 5-7, 2027 sponsor registration, but exact edition-specific pricing could not be read; confirm the 2027 quote and agency eligibility before budgeting.",
+        "sources": [
+          "https://www.southernendocrine.org/exhibitor",
+          "https://www.southernendocrine.org/meeting",
+          "https://www.southernendocrine.org/s/SSE-2027-Prospectus-Final-92926.pdf",
+          "https://members.mdmemphis.org/events/Details/southern-society-of-endocrinologists-2027-annual-meeting-1846691?sourceTypeId=Hub"
+        ]
+      }
+    }
+  },
+  {
+    "id": "TX47",
+    "updates": {
+      "feeAudit": {
+        "checked": "2026-11-17",
+        "status": "not_public",
+        "summary": "2027 sponsorship page explicitly says prospectus coming soon; no public booth amount on reviewed page. Ask for entry table, non-device/agency eligibility and a prior-year rate comparison.",
+        "sources": [
+          "https://cvinnovations.org/cvi2027/sponsorship/"
+        ]
+      }
+    }
+  },
+  {
+    "id": "OK01",
+    "updates": {
+      "feeAudit": {
+        "checked": "2026-11-17",
+        "status": "not_public",
+        "summary": "Board calendar and organizer site reviewed. Organizer lists corporate sponsors but no booth price for the Spring 2027 seminar. Ask for a one-table/non-sponsor vendor option; attendee CE registration is not a commercial exhibit fee.",
+        "sources": [
+          "https://oklahoma.gov/chiropractic/continued-education/in-state-hours.html",
+          "https://okchiros.com/"
+        ]
+      }
+    }
+  },
+  {
+    "id": "TX24",
+    "updates": {
+      "feeAudit": {
+        "checked": "2026-11-17",
+        "status": "not_public",
+        "summary": "2027 organizer page requires requesting the sponsor/exhibitor prospectus; public page has no price. Ask for smallest Expo footprint and an early rate rather than a sponsorship bundle.",
+        "sources": [
+          "https://online.txchiro.edu/pages/2027-aligned-convention"
+        ]
+      }
+    }
+  },
+  {
+    "id": "TX38",
+    "updates": {
+      "fee": null,
+      "priceUrl": "https://www2.aaoinfo.org/winter-conference-2027/winter-conference-exhibitor-prospectus/",
+      "includes": "Carpeted 10x10 with drape, counter-height table, two chairs and wastebasket; maximum two staff badges. Electricity and internet extra.",
+      "feeAudit": {
+        "checked": "2026-11-17",
+        "status": "restricted",
+        "summary": "2027 standard booth $3,800; premium location adds $150. Initial eligibility requires previously exhibiting with AAO, so new agency access is not assured. Final payment December 4, 2026; prior-day setup January 21 requires organizer coordination.",
+        "sources": [
+          "https://www2.aaoinfo.org/winter-conference-2027/winter-conference-exhibitor-prospectus/"
+        ]
+      },
+      "feeSavings": [
+        {
+          "year": 2027,
+          "amount": 3800,
+          "label": "AAO Winter standard 10x10 — prior-exhibitor restriction",
+          "source": "https://www2.aaoinfo.org/winter-conference-2027/winter-conference-exhibitor-prospectus/",
+          "conditions": "Initially open only to companies that previously exhibited with AAO; new agency must obtain approval. Premium placement adds $150; electricity and internet extra.",
+          "eligibility": "Prior AAO exhibitor or explicit organizer exception"
+        }
+      ]
+    }
+  },
+  {
+    "id": "TX40",
+    "updates": {
+      "feeAudit": {
+        "checked": "2026-11-17",
+        "status": "current",
+        "summary": "2027 official page reconfirms $5,663 standard 10x10; corner adds $300. Additional 100 sq ft $5,418 applies only to added space, not a cheaper entry booth. Mandatory carpet, table, chairs and utilities remain extra.",
+        "sources": [
+          "https://aaoms.org/exhibitors/2027-annual-meeting-for-exhibitors/exhibitor-prospectus/"
+        ]
+      }
+    }
+  },
+  {
+    "id": "LA07",
+    "updates": {
+      "fee": 2500,
+      "priceType": "Published booth / table",
+      "priceUrl": "https://www.louisianadermsociety.com/spring-meeting/sponsors",
+      "includes": "Entry Exhibitor Partner includes exhibit space and two representative badges; extra badges $200.",
+      "feeAudit": {
+        "checked": "2026-11-17",
+        "status": "current",
+        "summary": "Spring 2027 entry Exhibitor Partner is $2,500. Higher $5,000–$12,000 sponsor tiers are unnecessary for basic exhibit space; confirm agency category approval.",
+        "sources": [
+          "https://www.louisianadermsociety.com/spring-meeting/sponsors"
+        ]
+      }
+    }
+  },
+  {
+    "id": "TX20",
+    "updates": {
+      "priceUrl": "https://www.texasdermatology.org/exhibit-information",
+      "feeAudit": {
+        "checked": "2026-11-17",
+        "status": "historical",
+        "summary": "2026 organizer prospectus page 5 lists base exhibit $4,000 versus $5,500 Silver. Spring 2027 exhibit application not posted on reviewed page; ask for entry tabletop and updated fee.",
+        "sources": [
+          "https://www.texasdermatology.org/exhibit-information",
+          "https://tds.memberclicks.net/assets/Sylvia/2026%20TDS%20Exhibitor%20Prospectus%20-%20FINAL.pdf"
+        ]
+      },
+      "feeHistory": [
+        {
+          "year": 2026,
+          "amount": 4000,
+          "label": "2026 Spring/Fall base exhibitor",
+          "source": "https://tds.memberclicks.net/assets/Sylvia/2026%20TDS%20Exhibitor%20Prospectus%20-%20FINAL.pdf",
+          "conditions": "2026 annual Spring or Fall edition; one tabletop, two chairs, two reps. Not a 2027 quote."
+        }
+      ]
+    }
+  },
+  {
+    "id": "TX60",
+    "updates": {
+      "fee": 3300,
+      "priceType": "Published booth / table",
+      "priceUrl": "https://www.aaem.org/exhibitors-sponsors/",
+      "deadline": "2027-01-03",
+      "includes": "Deluxe 10x10, two staff badges, draped back wall, identification sign and complimentary lead retrieval. Confirm furnishings and required extras.",
+      "feeSavings": [
+        {
+          "year": 2027,
+          "amount": 3300,
+          "label": "Deluxe booth by January 3",
+          "source": "https://embed-rech-01.dialog.cm/aaeminfo/docs/aaem27_exhibitor_sponsor_prospectus",
+          "conditions": "Deluxe early $3,300, then $3,700 after January 3; premium corner $3,800 early. Nonprofit $2,500 is ineligible for standard commercial business; application approval required.",
+          "eligibility": "Commercial exhibitor approved by AAEM; commit by January 3, 2027"
+        }
+      ],
+      "feeAudit": {
+        "checked": "2026-11-17",
+        "status": "current",
+        "summary": "AAEM27 publisher prospectus lists Deluxe 10x10 $3,300 early/$3,700 after January 3; Premium $3,800/$4,200. Save $400 via early commitment. AAEM prohibits accepting contracts, payments or purchase commitments onsite.",
+        "sources": [
+          "https://www.aaem.org/exhibitors-sponsors/",
+          "https://embed-rech-01.dialog.cm/aaeminfo/docs/aaem27_exhibitor_sponsor_prospectus"
+        ]
+      }
+    }
+  },
+  {
+    "id": "OK09",
+    "updates": {
+      "feeHistory": [
+        {
+          "year": 2024,
+          "amount": 1500,
+          "label": "2024 Converge standard 8x10",
+          "source": "https://rdmobile-palermo-production.s3.amazonaws.com/1ef056b5-a2a2-419f-a513-e45515ed1568/event-18038/362867781-OAOP_2024-Prospectus-RV.pdf",
+          "conditions": "2024 organizer-branded prospectus: standard8x10 $1,500, premium8x20 $2,500; furnishings, power and basicWi-Fi included. Not a 2027 quote."
+        }
+      ],
+      "feeSavings": [
+        {
+          "year": 2024,
+          "amount": 1350,
+          "label": "Historical repeat-event standard discount",
+          "source": "https://rdmobile-palermo-production.s3.amazonaws.com/1ef056b5-a2a2-419f-a513-e45515ed1568/event-18038/362867781-OAOP_2024-Prospectus-RV.pdf",
+          "conditions": "2024 Converge gave a $150 promo discount to 2024 Vision Summit exhibitors: $1,500 standard less $150=$1,350. Historical only; no 2027 assumption.",
+          "eligibility": "Had exhibited at 2024 OAOP Vision Summit and used promo code"
+        }
+      ],
+      "feeAudit": {
+        "checked": "2026-11-17",
+        "status": "historical",
+        "summary": "2027 event and current industry-support listing reviewed; fee remains unresolved. Official branded 2024 prospectus publishes $1,500 standard 8x10 and a $150 returning-event discount. Use only as a dated negotiation benchmark, with 2027 conditions to confirm.",
+        "sources": [
+          "https://oklahoma.aoa.org/events/industry-support",
+          "https://rdmobile-palermo-production.s3.amazonaws.com/1ef056b5-a2a2-419f-a513-e45515ed1568/event-18038/362867781-OAOP_2024-Prospectus-RV.pdf"
+        ]
+      }
+    }
+  },
+  {
+    "id": "LA30",
+    "updates": {
+      "feeAudit": {
+        "checked": "2026-11-17",
+        "status": "not_public",
+        "summary": "Current chapter page lists 2027 and prior annual meetings but no exhibitor rate. Attendee registration is not a booth offer; ask chapter for agency eligibility and a single-day table.",
+        "sources": [
+          "https://www.acponline.org/about-acp/chapters-regions/united-states/louisiana-chapter/news-meetings"
+        ]
+      }
+    }
+  },
+  {
+    "id": "OK15",
+    "updates": {
+      "feeHistory": [
+        {
+          "year": 2023,
+          "amount": 995,
+          "label": "2023 Midyear tabletop",
+          "source": "https://www.aocopm.org/assets/documents/MY23/Exhibitor%20Options.pdf",
+          "conditions": "2023 Kansas City edition; not a 2027 Oklahoma quote. Draped six-foot table and chair; extras separate."
+        }
+      ],
+      "feeAudit": {
+        "checked": "2026-11-17",
+        "status": "historical",
+        "summary": "Official exhibitor page still links a 2023 prospectus: tabletop $995. Historical page explicitly invites reduced-fee requests from small companies; ask whether this concession remains available for 2027.",
+        "sources": [
+          "https://www.aocopm.org/my23-supporter-and-exhibitor-prospectus",
+          "https://www.aocopm.org/assets/documents/MY23/Exhibitor%20Options.pdf"
+        ]
+      }
+    }
+  },
+  {
+    "id": "OK19",
+    "updates": {
+      "feeAudit": {
+        "checked": "2026-11-17",
+        "status": "unresolved",
+        "summary": "Prior 2026 organizer listing was found through search after original URL failed; it gives $50 attendee admission, not exhibits. No next-edition commercial table quote verified in this pass; ask whether 2027 repeats and admits vendors.",
+        "sources": [
+          "https://okmed.org/Online/Online/Education/2026_Oklahoma_Womens_Summit.aspx?hkey=b4a0f6cf-9142-459f-9b29-eb8fa06b0d73"
+        ]
+      }
+    }
+  },
+  {
+    "id": "TX06",
+    "updates": {
+      "feeSavings": [
+        {
+          "year": 2027,
+          "amount": 3000,
+          "label": "January early booth rate",
+          "source": "https://www.texmed.org/uploadedFiles/10.23.2027_TexMed_Exhibitor_Prospectus.pdf",
+          "conditions": "Prospectus labels January early $3,000 and February standard $3,250. Confirm exact cutoff; $350 lead retrieval optional and separate.",
+          "eligibility": "Commercial exhibitor approval and January early rate availability"
+        }
+      ],
+      "feeAudit": {
+        "checked": "2026-11-17",
+        "status": "current",
+        "summary": "2027 prospectus reconfirms $3,000 early booth/table in January versus $3,250 standard in February. Both booth formats cost the same. Opening exhibit-day setup April 16, 6–7am is published; no extra hotel night needed for this setup option.",
+        "sources": [
+          "https://www.texmed.org/uploadedFiles/10.23.2027_TexMed_Exhibitor_Prospectus.pdf"
+        ]
+      }
+    }
+  },
+  {
+    "id": "TX77",
+    "updates": {
+      "feeHistory": [
+        {
+          "year": 2026,
+          "amount": 2000,
+          "label": "2026 Texas ACP base tabletop",
+          "source": "https://txacp.org/wp-content/uploads/2026/01/TXACP-2026-Exhibitor-Prospectus.pdf",
+          "conditions": "2026 Plano edition only; next annual meeting dates and rate unconfirmed. Table 6ft x30in, two chairs and two reps; electricity/internet extra."
+        }
+      ],
+      "feeAudit": {
+        "checked": "2026-11-17",
+        "status": "historical",
+        "summary": "2026 organizer prospectus offers entry exhibit at $2,000 versus Silver $3,000, Gold $4,500 and Platinum $6,000. Use base exhibit as negotiation benchmark; no confirmed 2027 rate.",
+        "sources": [
+          "https://txacp.org/exhibitors-and-sponsors/",
+          "https://txacp.org/wp-content/uploads/2026/01/TXACP-2026-Exhibitor-Prospectus.pdf"
+        ]
+      }
+    }
+  },
+  {
+    "id": "TX71",
+    "updates": {
+      "feeAudit": {
+        "checked": "2026-11-17",
+        "status": "not_public",
+        "summary": "Current sponsor page offers a six-foot table at Exhibitor/Bronze/Silver/Gold levels but public page omits conference prices. The $150 webinar sponsorship is a separate channel, not a conference booth discount; ask for entry Exhibitor-only quote.",
+        "sources": [
+          "https://texashearingaids.org/Sponsor_Opportunities",
+          "https://thaa.starchapter.com/meet-reg1.php?id=5"
+        ]
+      }
+    }
+  },
+  {
+    "id": "TX18",
+    "updates": {
+      "feeAudit": {
+        "checked": "2026-11-17",
+        "status": "current",
+        "summary": "2027 official page reconfirms $4,790 standard versus $5,790 premium: choose standard to save $1,000. Furniture, carpeting and two badges included. Published opening-day setup January 28, 7–10am supports no extra pre-show hotel night; application requires approval.",
+        "sources": [
+          "https://cosmeticsurgery.org/asm2027/exhibit/"
+        ]
+      }
+    }
+  },
+  {
+    "id": "TX12",
+    "updates": {
+      "feeAudit": {
+        "checked": "2026-11-17",
+        "status": "not_public",
+        "summary": "Organizer 2027 exhibitor center says application details open in early 2027; no commercial fee on reviewed page. Request standard exhibit only and compare with old sponsor packages.",
+        "sources": [
+          "https://www.tsps.net/exhibit-in-2026"
+        ]
+      }
+    }
+  },
+  {
+    "id": "TX23",
+    "updates": {
+      "feeAudit": {
+        "checked": "2026-11-17",
+        "status": "not_public",
+        "summary": "Current organizer events/archive reviewed: Dallas 2026 Boot Camp exists, but next Dallas edition and public exhibit fee remain unconfirmed. Ask for vendor-only package and compare any membership requirement with savings; attendee boot-camp tuition is not a booth quote.",
+        "sources": [
+          "https://www.americanmedspa.org/events/"
+        ]
+      }
+    }
+  },
+  {
+    "id": "LA32",
+    "updates": {
+      "feeSavings": [
+        {
+          "year": 2026,
+          "amount": 125,
+          "label": "Historical nonprofit Fall workshop table",
+          "source": "https://louisianapsychologicalassociation.org/conference-exhibitors/",
+          "conditions": "Nonprofit-only, one-day 2026 Fall workshop; government rate $300. Neither is an unrestricted commercial agency rate; 2027 terms pending.",
+          "eligibility": "Qualifying nonprofit or government agency, not a standard commercial business"
+        }
+      ],
+      "feeAudit": {
+        "checked": "2026-11-17",
+        "status": "restricted",
+        "summary": "Reviewed public 2026 Fall table fees: $125 nonprofit and $300 government. No commercial agency price is published; do not apply these restricted rates to Stoneridge or treat them as 2027 quotes.",
+        "sources": [
+          "https://louisianapsychologicalassociation.org/conference-exhibitors/"
+        ]
+      }
+    }
+  },
+  {
+    "id": "TX68",
+    "updates": {
+      "fee": 750,
+      "priceType": "Published booth / table",
+      "priceUrl": "https://www.houstoneds.org/sponsor-heds-conference/",
+      "includes": "Whole-hearted tier: marketing booth first location choice, four registrations, lunch recognition, website/program recognition.",
+      "feeAudit": {
+        "checked": "2026-11-17",
+        "status": "current",
+        "summary": "2027 application explicitly includes a marketing booth with the $750 Whole-hearted tier. $500/$250 tiers list recognition/registrations but do not explicitly promise booth space; free shared booth is restricted to direct-care provider partners. Confirm the smallest commercial booth offer.",
+        "sources": [
+          "https://www.houstoneds.org/sponsor-heds-conference/"
+        ]
+      }
+    }
+  },
+  {
+    "id": "TX56",
+    "updates": {
+      "feeAudit": {
+        "checked": "2026-11-17",
+        "status": "unresolved",
+        "summary": "Organizer current events and prior November2026 convention pages reviewed/searched. Prior exhibit program is established, but no exact annual-convention fee verified in this pass; avoid using the separate Spring/TSCAP packages as an annual rate. Next2027 edition and entry table quote pending.",
+        "sources": [
+          "https://www.txpsych.org/conferences-and-events/",
+          "https://www.txpsych.org/2026-tspp-annual-convention-original/"
+        ]
+      }
+    }
+  },
+  {
+    "id": "LA02",
+    "updates": {
+      "feeHistory": [
+        {
+          "year": 2026,
+          "amount": 3700,
+          "label": "2026 standard 10x10 inline",
+          "source": "https://storage.aanp.org/www/documents/events/2026/AANP26_Exhibitor_Prospectus.pdf",
+          "conditions": "2026 Las Vegas commercial inline rate $37/sq ft x100; not a 2027 New Orleans quote. Carpet mandatory and extra; furnishings/services extra."
+        }
+      ],
+      "feeAudit": {
+        "checked": "2026-11-17",
+        "status": "historical",
+        "summary": "2027 event page is save-the-date; 2026 official prospectus gives $3,700 inline versus $3,800 corner. Mandatory carpet, furniture and services are extra. The $2,000 first-time promotion package is an add-on, not discounted booth space.",
+        "sources": [
+          "https://www.aanp.org/events/2027-aanp-national-conference",
+          "https://storage.aanp.org/www/documents/events/2026/AANP26_Exhibitor_Prospectus.pdf"
+        ]
+      }
+    }
+  },
+  {
+    "id": "TX36",
+    "updates": {
+      "feeHistory": [
+        {
+          "year": 2026,
+          "amount": 2000,
+          "label": "2026 corporate tabletop",
+          "source": "https://texasnp.org/wp-content/uploads/2025/10/C2-TNP-2026-Pharma-Conf-Prospectus82.pdf",
+          "conditions": "2026 edition corporate table; fewer-than-five-employees conditional rate was $750. Historical comparison only."
+        }
+      ],
+      "feeSavings": [
+        {
+          "year": 2027,
+          "amount": 750,
+          "label": "Small-business tabletop",
+          "source": "https://texasnp.org/wp-content/uploads/2026/11/V3-TNP-2027-Pharma-Conf-Prospectus.pdf",
+          "conditions": "Business must have fewer than five total employees; subject to approval. March 9 application deadline; no assumption that Stoneridge qualifies.",
+          "eligibility": "Fewer than five total employees and organizer approval"
+        }
+      ],
+      "feeAudit": {
+        "checked": "2026-11-17",
+        "status": "current",
+        "summary": "2027 official prospectus reconfirmed by following the live event page: corporate $2,000 and small-business $750 for fewer than five total employees, subject to approval. 2026 official prospectus has same tiers; potential $1,250 reduction depends on business eligibility.",
+        "sources": [
+          "https://texasnp.org/pharma2027/",
+          "https://texasnp.org/wp-content/uploads/2025/10/C2-TNP-2026-Pharma-Conf-Prospectus82.pdf",
+          "https://texasnp.org/wp-content/uploads/2026/11/V3-TNP-2027-Pharma-Conf-Prospectus.pdf"
+        ]
+      }
+    }
+  },
+  {
+    "id": "TX83",
+    "updates": {
+      "feeSavings": [
+        {
+          "year": 2026,
+          "amount": 2500,
+          "label": "2026 commercial tabletop — deadline passed",
+          "source": "https://www.aacr.org/wp-content/uploads/2025/12/2509041_26SpecConf_ExhProsp_5-1.pdf",
+          "conditions": "Liver Cancer conference application deadline was November 5, 2026; ask about late inventory and commercial services relevance. Table only, not 10x10; $900 rate is nonprofit/government only.",
+          "eligibility": "AACR approval; products/services relevant to cancer research; late acceptance required"
+        }
+      ],
+      "feeAudit": {
+        "checked": "2026-11-17",
+        "status": "restricted",
+        "summary": "2026 official special-conference prospectus includes December Austin Liver Cancer: commercial table $2,500, $900 nonprofit only. November 5 application deadline passed; agency relevance and late acceptance unresolved, so no unrestricted current fee applied.",
+        "sources": [
+          "https://www.aacr.org/wp-content/uploads/2025/12/2509041_26SpecConf_ExhProsp_5-1.pdf"
+        ]
+      }
+    }
+  },
+  {
+    "id": "TX76",
+    "updates": {
+      "feeAudit": {
+        "checked": "2026-11-17",
+        "status": "unresolved",
+        "summary": "Prior 2026 registration source redirects to OSS Oncology and could not be read. No verified next-edition commercial exhibit fee or agency eligibility in this pass; obtain exhibit-only written quote rather than applying pharmaceutical sponsorship assumptions.",
+        "sources": [
+          "https://registration.accc-cancer.org/txsco-2026-annual-conference",
+          "https://registration.oss-oncology.org/txsco-2026-annual-conference"
+        ]
+      }
+    }
+  },
+  {
+    "id": "TX27",
+    "updates": {
+      "fee": 5000,
+      "priceType": "Published booth / table",
+      "priceUrl": "https://www.stardoctors.org/wp-content/uploads/2026/07/STAR-2027-Exhibit-Prospectus.pdf",
+      "deadline": "2027-01-18",
+      "includes": "Entry exhibit space only; six-foot tabletop and two badges per day. No booth sharing; confirm exact entry footprint and package.",
+      "feeAudit": {
+        "checked": "2026-11-17",
+        "status": "current",
+        "summary": "2027 prospectus lists $5,000 Exhibit Space Only, below $20,000+ sponsor levels. $250/person/day is nonprofit-only and not applicable to a commercial agency. Application deadline January 18.",
+        "sources": [
+          "https://www.stardoctors.org/wp-content/uploads/2026/07/STAR-2027-Exhibit-Prospectus.pdf"
+        ]
+      }
+    }
+  },
+  {
+    "id": "TX78",
+    "updates": {
+      "feeHistory": [
+        {
+          "year": 2026,
+          "amount": 2500,
+          "label": "2026 commercial early exhibit",
+          "source": "https://www.texaspain.org/2026-annual-meeting-exhibits",
+          "conditions": "Before August 18, 2026; later $2,750 then $3,000. 2026 event sold out; not 2027 pricing. Table, two chairs, two badges."
+        },
+        {
+          "year": 2024,
+          "amount": 2000,
+          "label": "2024 early exhibit table",
+          "source": "https://www.texaspain.org/exhibits",
+          "conditions": "Before July 31, 2024; regular $2,500 and late $3,000. Historical only."
+        },
+        {
+          "year": 2022,
+          "amount": 1500,
+          "label": "2022 commercial early tabletop",
+          "source": "https://tps.memberclicks.net/ExhibitInformation",
+          "conditions": "Before October 1, 2022; regular $1,750. Different year/package, historical only."
+        },
+        {
+          "year": 2026,
+          "amount": 2750,
+          "label": "2026 standard commercial exhibit",
+          "source": "https://www.texaspain.org/2026-annual-meeting-exhibits",
+          "conditions": "Historical 2026 standard commercial table USD 2,750, between early USD 2,500 and late USD 3,000 windows. 2026 event sold out; not a 2027 offer. Table, two chairs and two badges."
+        }
+      ],
+      "feeAudit": {
+        "checked": "2026-11-17",
+        "status": "historical",
+        "summary": "2026 official entry exhibit ranged $2,500 early to $3,000 late; 2024 early was $2,000 and 2022 early $1,500. Ask for the 2027 early exhibit-only rate using dated comparisons; these old amounts are not current offers.",
+        "sources": [
+          "https://www.texaspain.org/2026-annual-meeting-exhibits",
+          "https://www.texaspain.org/exhibits",
+          "https://tps.memberclicks.net/ExhibitInformation"
+        ]
+      }
+    }
+  },
+  {
+    "id": "LA25",
+    "updates": {
+      "feeSavings": [
+        {
+          "year": 2027,
+          "amount": 2000,
+          "label": "Four-table bundle per table",
+          "source": "https://www.academicpeds.org/wp-content/uploads/2026/09/PHM_2027_Exhibitor_Prospectus.pdf",
+          "conditions": "Requires reserving at least four tables: minimum $8,000 total, not a $2,000 solo-table offer. One table remains $2,200.",
+          "eligibility": "Organizations reserving four or more tables"
+        }
+      ],
+      "feeAudit": {
+        "checked": "2026-11-17",
+        "status": "current",
+        "summary": "2027 prospectus reconfirms $2,200 single table; $2,000/table requires 4+ ($8,000 minimum). This bulk rate does not lower a solo exhibitor's total cost. No public cheaper one-table option found in reviewed prospectus.",
+        "sources": [
+          "https://www.academicpeds.org/wp-content/uploads/2026/09/PHM_2027_Exhibitor_Prospectus.pdf"
+        ]
+      }
+    }
+  },
+  {
+    "id": "TX32",
+    "updates": {
+      "feeSavings": [
+        {
+          "year": 2027,
+          "amount": 1500,
+          "label": "Standard booth by August 13",
+          "source": "https://www.txpma.org/aws/TPMA/pt/sp/southwest_conference",
+          "conditions": "Standard early $1,500 vs $1,700 after August 13; prime $2,500 early. Official hotel block is required and is additional; confirm setup exception.",
+          "eligibility": "Pay by August 13, 2027 and comply with hotel block/organizer terms"
+        }
+      ],
+      "feeAudit": {
+        "checked": "2026-11-17",
+        "status": "current",
+        "summary": "2027 indexed organizer exhibit table confirms standard $1,500 by August 13/$1,700 after. Prime is $2,500 early; first-time exhibitors can pay $500 extra for prime, which saves versus full prime but raises total versus standard.",
+        "sources": [
+          "https://www.txpma.org/aws/TPMA/pt/sp/southwest_conference",
+          "https://www.txpma.org/aws/TPMA/pt/sd/calendar/368395/_PARENT/layout_details/false"
+        ]
+      }
+    }
+  },
+  {
+    "id": "LA06",
+    "updates": {
+      "feeHistory": [
+        {
+          "year": 2026,
+          "amount": 1800,
+          "label": "2026 nonmember exhibitor",
+          "source": "https://www.lmgma.org/event-6578453",
+          "conditions": "2026 Southern Summer Conference was in Biloxi, Mississippi; 2027 in-footprint venue and price not confirmed."
+        }
+      ],
+      "feeSavings": [
+        {
+          "year": 2026,
+          "amount": 1500,
+          "label": "Historical affiliate-member booth",
+          "source": "https://www.lmgma.org/event-6578453",
+          "conditions": "2026 affiliate member rate saved $300 against nonmember, before membership dues. Biloxi edition; ask about next edition and full membership cost.",
+          "eligibility": "LMGMA affiliate membership"
+        }
+      ],
+      "feeAudit": {
+        "checked": "2026-11-17",
+        "status": "historical",
+        "summary": "2026 public exhibitor registration: nonmember $1,800, affiliate $1,500, sponsorships $3,000+. Prior event was outside four-state footprint. No current 2027 quote.",
+        "sources": [
+          "https://www.lmgma.org/event-6578453"
+        ]
+      }
+    }
+  },
+  {
+    "id": "OK05",
+    "updates": {
+      "feeHistory": [
+        {
+          "year": 2026,
+          "amount": 1300,
+          "label": "2026 nonmember exhibitor",
+          "source": "https://www.okmgma.com/event-6516236",
+          "conditions": "2026 Spring Conference only; next dates and booth rate pending."
+        }
+      ],
+      "feeSavings": [
+        {
+          "year": 2026,
+          "amount": 1000,
+          "label": "Historical affiliate-member exhibit",
+          "source": "https://www.okmgma.com/event-6516236",
+          "conditions": "2026 affiliate rate saves $300 against $1,300 nonmember before membership dues. Confirm 2027 and cost of membership; Bronze sponsorship was $1,400.",
+          "eligibility": "OKMGMA affiliate membership"
+        }
+      ],
+      "feeAudit": {
+        "checked": "2026-11-17",
+        "status": "historical",
+        "summary": "2026 organizer form distinguishes $1,300 nonmember exhibit, $1,000 affiliate exhibit and $1,400 Bronze sponsor. Ask for exhibit-only and whether membership savings exceed dues for 2027.",
+        "sources": [
+          "https://www.okmgma.com/event-6516236"
+        ]
+      }
+    }
+  },
+  {
+    "id": "TX93",
+    "updates": {
+      "feeAudit": {
+        "checked": "2026-11-17",
+        "status": "not_public",
+        "summary": "Current chapter partnership page supports annual-conference exhibits but publishes no fee or specific next edition. Ask for conference-only table and total dues if corporate membership is proposed; annual partner bundles may exceed entry booth cost.",
+        "sources": [
+          "https://www.mgma.com/texas/sponsorships/prospectus"
+        ]
+      }
+    }
+  },
+  {
+    "id": "TX50",
+    "updates": {
+      "feeAudit": {
+        "checked": "2026-11-17",
+        "status": "not_public",
+        "summary": "2027 meeting page reviewed: $50/$100/$150 prices are student/trainee/faculty admission, not exhibits. No public commercial booth offer on reviewed page. Confirm whether an agency exhibit is allowed before pricing this as a trade-show opportunity.",
+        "sources": [
+          "https://tsnr.org/meetings/tsnr-2027/"
+        ]
+      }
+    }
+  },
+  {
+    "id": "LA20",
+    "updates": {
+      "feeAudit": {
+        "checked": "2026-11-17",
+        "status": "not_public",
+        "summary": "2027 official event page says attendee cost FREE, but does not publish commercial exhibit space. Free licensee admission must not become a zero-dollar booth quote; ask board whether any commercial table is permitted.",
+        "sources": [
+          "https://events.laptboard.org/event/2027-extra-mile/"
+        ]
+      }
+    }
+  },
+  {
+    "id": "TX66",
+    "updates": {
+      "fee": 4000,
+      "priceType": "Published booth / table",
+      "priceUrl": "https://www.afassanoco.com/ada/cuc.html",
+      "includes": "10x10, six-foot draped table, two chairs, wastebasket, two registrations, Wi-Fi and attendee preview list.",
+      "feeAudit": {
+        "checked": "2026-11-17",
+        "status": "current",
+        "summary": "2027 ADA-linked official exhibit sales page lists standard space $4,000, with furniture and shared Wi-Fi included. No cheaper commercial space listed on reviewed page. Exhibits February 5–6; setup February 4 requires same-day exception.",
+        "sources": [
+          "https://professional.diabetes.org/es/node/31206",
+          "https://www.afassanoco.com/ada/cuc.html"
+        ]
+      }
+    }
+  },
+  {
+    "id": "OK20",
+    "updates": {
+      "feeAudit": {
+        "checked": "2026-11-17",
+        "status": "not_public",
+        "summary": "Official section page only posts a 2027 save-the-date image and contact. No readable current booth price or verified historical commercial table fee found in this pass; request smallest vendor package and any early commitment offer.",
+        "sources": [
+          "https://oklahoma.awhonn.org/"
+        ]
+      }
+    }
+  },
+  {
+    "id": "TX96",
+    "updates": {
+      "feeAudit": {
+        "checked": "2026-11-17",
+        "status": "not_public",
+        "summary": "Organizer Bandera archive reviewed through 2026/2025 display-sponsor lists; no numeric commercial display rate on reviewed pages. Ask whether display-only sponsorship can be purchased without larger donor bundle, and confirm 2027 venue.",
+        "sources": [
+          "https://txpmf.org/category/events/bandera-meeting/",
+          "https://txpmf.org/bandera-meeting-2026-2/"
+        ]
+      }
+    }
+  },
+  {
+    "id": "TX100",
+    "updates": {
+      "feeAudit": {
+        "checked": "2026-11-17",
+        "status": "not_public",
+        "summary": "2027 course page is save-the-date with December registration opening; no public commercial exhibit price on reviewed page. Agency participation is unverified; ask whether tabletop exhibits exist rather than using course tuition as cost.",
+        "sources": [
+          "https://www.aofas.org/education/meetings-courses/sports-injuries-course"
+        ]
+      }
+    }
+  },
+  {
+    "id": "LA38",
+    "updates": {
+      "feeAudit": {
+        "checked": "2026-11-17",
+        "status": "unresolved",
+        "summary": "2027 organizer calendar lists no New Orleans edition yet; old 2026LAapp PDF returns404 after migration. Existing notes cite a prior $1,450 tabletop, but that amount was not reverified in this pass and is not promoted into numeric price history.",
+        "sources": [
+          "https://www.podiatryinstitute.com/2027-seminars",
+          "https://podiatryinstitute.com/pdfs/2026LAapp.pdf"
+        ]
+      }
+    }
+  },
+  {
+    "id": "OK25",
+    "updates": {
+      "feeAudit": {
+        "checked": "2026-11-17",
+        "status": "not_public",
+        "summary": "2027 event page reviewed and targeted exhibitor search performed; exact resort and commercial table fee remain unpublished on reviewed page. Request table-only quote and early/returning-vendor terms; no price inferred from attendee membership.",
+        "sources": [
+          "https://focusfoundations.com/focus-okc/"
+        ]
+      }
+    }
+  },
+  {
+    "id": "LA42",
+    "updates": {
+      "feeAudit": {
+        "checked": "2026-11-17",
+        "status": "not_public",
+        "summary": "Organizer Last Chance seminar page reviewed; attendee CE details appear but no commercial table offer. Confirm agency eligibility and any one-day tabletop rate before treating this seminar as a usable trade exhibition.",
+        "sources": [
+          "https://www.ladental.org/lastchance"
+        ]
+      }
+    }
+  },
+  {
+    "id": "OK27",
+    "updates": {
+      "feeAudit": {
+        "checked": "2026-11-17",
+        "status": "unresolved",
+        "summary": "2027 March Madness information says coming soon. Exhibitor link redirects to the separate 2026 Annual Session form ($180 retail/$375 dental/$50 nonprofit); those are not verified March Madness rates and are excluded from this event's price history.",
+        "sources": [
+          "https://okdha.org/march-madness/",
+          "https://okdha.org/annual-session/exhibitor-registration/"
+        ]
+      }
+    }
+  },
+  {
+    "id": "AR01",
+    "updates": {
+      "feeAudit": {
+        "checked": "2026-11-17",
+        "status": "not_public",
+        "summary": "2027 ASDA education page and marketplace reviewed; no event-specific commercial booth amount. Registration TBA and membership benefits do not establish exhibit cost. Ask for entry trade-hall booth and early-pay price.",
+        "sources": [
+          "https://www.arkansasdentistry.org/education",
+          "https://www.arkansasdentistry.org/marketplace"
+        ]
+      }
+    }
+  },
+  {
+    "id": "AR05",
+    "updates": {
+      "feeAudit": {
+        "checked": "2026-11-17",
+        "status": "not_public",
+        "summary": "ASDA education page still shows 2026 Fall tuition $330 member/$630 nonmember, with no booth quote. Those are attendee prices. Confirm next Fall edition and exhibit-only/tabletop package directly with organizer.",
+        "sources": [
+          "https://www.arkansasdentistry.org/education"
+        ]
+      }
+    }
+  },
+  {
+    "id": "AR09",
+    "updates": {
+      "feeAudit": {
+        "checked": "2026-11-17",
+        "status": "unresolved",
+        "summary": "Organizer Eventbrite listing found via search after rate-limited direct access. It confirms prior February2026 meeting, but no next-edition booth price or commercial eligibility was verified; no attendee ticket amount is substituted.",
+        "sources": [
+          "https://www.eventbrite.com/e/neadds-winter-meeting-2026-tickets-1979953373840"
+        ]
+      }
+    }
+  }
+]
