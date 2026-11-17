@@ -13,7 +13,7 @@ Live app: https://sre-2025.github.io/medical-conference-picker/?plan=2027
 Answers and manually entered booth quotes are saved in the current browser only. They are not sent to GitHub. Export a JSON backup to move between devices. The site does not purchase booths, make reservations or contact organizers.
 
 ## Research
-Checked November 16, 2026. The catalog contains 150 distinct event / recurring-series entries, 98 posted date ranges, 22 current published commercial exhibit prices and 20 sourced attendance benchmarks / forecasts. Another 52 entries need their next dates confirmed. Pending dates and unconfirmed physical locations remain watchlist entries.
+Conference research checked November 16, 2026; historical audience research and same-day travel rules updated November 17, 2026. The catalog contains 150 distinct event / recurring-series entries, 98 posted date ranges, 22 current published commercial exhibit prices and 24 sourced attendance benchmarks / forecasts. Another 52 entries need their next dates confirmed. Pending dates and unconfirmed physical locations remain watchlist entries.
 
 Every event has organizer links. Each size figure has its own source and basis; previous-year figures, typical annual figures, professional subsets and forecasts are labeled. Exhibitor counts and booth capacity are separate from attendee counts. These figures do not establish lead volume or the number of practice owners present.
 
@@ -26,9 +26,9 @@ New research includes:
 - TAFP, LAFP, PHM, Southern Neurosurgical Society and other primary-source size figures are linked on the cards.
 
 ## Planning assumptions
-Each event is a separate round trip from the chosen city center. Approximate road distance is 1.2 times great-circle distance. Driving allows roughly 440 miles per travel day; flights reserve one day each way and use an editable round-trip airfare allowance plus $120 ground transport. Trips within 60 estimated road miles are treated as local. Setup adds one day; optional rest adds one full free day between trips.
+Each event is a separate round trip from the chosen city center. Arrive on the opening show day and leave on the final show day. Out-of-town hotel nights equal selected show days minus one: two days = one night, three days = two nights, one day = zero nights. No hotel is added before opening or after closing. Trips within 60 estimated road miles are local and use zero hotel nights. Published exhibit dates are used by default where available; otherwise full conference dates are held. No automatic setup or extra travel days are added. An optional full free day between shows is spent at home and adds no hotel or meal cost. Confirm transport schedules and required vendor move-in before booking; date checks alone do not verify same-day travel feasibility. Older saved plans retain their choices and quotes; their legacy setup preference is ignored.
 
-The budget includes the booth price when known, estimated round-trip travel, hotel, meals, show-day parking, per-show extras and the reusable kit once. Missing quotes, dates or travel information keep estimates incomplete. Published fee conditions and required extras must be confirmed with the organizer. Staff time is excluded. Hotel and flight amounts are editable allowances, not live quotes.
+Approximate road distance is 1.2 times great-circle distance. Flying uses an editable round-trip airfare allowance plus $120 ground transport. Meals and parking cover selected show days. The budget includes the booth price when known, estimated round-trip travel, hotel, meals, show-day parking, per-show extras and the reusable kit once. Missing quotes, dates or travel information keep estimates incomplete. Published fee conditions and required extras must be confirmed with the organizer. Staff time is excluded. Hotel and flight amounts are editable allowances, not live quotes.
 
 Changing preferences can make existing choices conflict. The itinerary flags those conflicts and blocks calendar export until scheduling issues are resolved. Selecting an unknown-date event does not reserve time.
 
@@ -39,3 +39,8 @@ Buildless HTML/CSS/ES modules; no framework or package install required.
 
 Data is in `data.json`. Organizer facts are public; user choices remain in local storage. To refresh research, edit source-backed event records, preserve IDs and rerun tests.
 
+
+## Historical doctor attendance
+Ten series have linked historical audience research. Two currently provide usable physician / dentist benchmarks: ASLMS 2025 about 369 physicians (calculated from 648 attendees × rounded 57% physician share), and TDA 2025 1,000 dentists (Trade Show Executive report). Dentistry is labeled separately from medical physicians. ASDS 2025's 127 residents / fellows in training are shown as a training audience and excluded from the minimum-count filter. TRS's 57% physician share is pooled 2022–2024 data without a matching total, so it is not converted into a headcount.
+
+ACC's MD/PhD/DO category includes medical students and is not a physician-only count. ATS audit totals, Aesthetic Next totals, TexMed's mixed attendees, AAHKS totals and TAFP symposium totals remain separate from doctor counts. Unknown doctor counts stay null. The cards include source, year, location, scope and limitations, and the physician / dentist sort and optional minimum-count filter use only reported or explicitly calculated counts. Exported CSVs include doctor benchmark fields and hotel nights. Doctor presence does not establish practice ownership, buying authority or visits to our booth.

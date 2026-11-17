@@ -6,24 +6,26 @@ export const stamp=s=>Date.parse(s+"T12:00:00Z")/DAY;
 export const iso=n=>new Date(n*DAY).toISOString().slice(0,10);
 export const dateAdd=(s,n)=>iso(stamp(s)+n);
 export const days=(a,b)=>Math.round(stamp(b)-stamp(a));
-export function defaults(events){return {states:{TX:true,OK:true,LA:true},regions:Object.fromEntries(REGIONS.map(r=>[r[0],true])),months:Object.fromEntries(MONTHS.map(m=>[m,true])),categories:Object.fromEntries(events.map(e=>[e.category,true])),base:"Austin",drive:true,setup:true,rest:true,exhibitOnly:true,includeWatch:true,includeUnknownFee:true,limitEvent:false,maxEvent:4000,limitTotal:false,maxTotal:15000,limitMonth:false,maxMonth:2,requireSize:false,minSize:300,includeUnknownSize:true,useHistorical:true,smallBusiness:false,hotel:175,food:65,parking:25,mileRate:0.55,flight:450,extras:250,kit:750,blocked:[]};}
+export function defaults(events){return {states:{TX:true,OK:true,LA:true},regions:Object.fromEntries(REGIONS.map(r=>[r[0],true])),months:Object.fromEntries(MONTHS.map(m=>[m,true])),categories:Object.fromEntries(events.map(e=>[e.category,true])),base:"Austin",drive:true,rest:true,exhibitOnly:true,includeWatch:true,includeUnknownFee:true,limitEvent:false,maxEvent:4000,limitTotal:false,maxTotal:15000,limitMonth:false,maxMonth:2,requireSize:false,minSize:300,requireDoctors:false,minDoctors:100,allowDoctorEstimates:true,includeUnknownSize:true,useHistorical:true,smallBusiness:false,hotel:175,food:65,parking:25,mileRate:0.55,flight:450,extras:250,kit:750,blocked:[]};}
 export function miles(a,b){if(!a||!b)return null;const rad=x=>x*Math.PI/180;const dlat=rad(b[0]-a[0]),dlon=rad(b[1]-a[1]);return 3958.8*2*Math.asin(Math.sqrt(Math.sin(dlat/2)**2+Math.cos(rad(a[0]))*Math.cos(rad(b[0]))*Math.sin(dlon/2)**2));}
 export function eventFee(e,p,quotes={}){if(Number.isFinite(quotes[e.id])&&quotes[e.id]>=0)return quotes[e.id];if(p.smallBusiness&&Number.isFinite(e.conditionalFee))return e.conditionalFee;return Number.isFinite(e.fee)?e.fee:null;}
 export function span(e,p){if(!e.start||!e.end)return null;return {start:p.exhibitOnly&&e.exhibitStart?e.exhibitStart:e.start,end:p.exhibitOnly&&e.exhibitEnd?e.exhibitEnd:e.end};}
 export function trip(e,p,quotes={}){
  const s=span(e,p),straight=miles(BASES[p.base],e.coordinates),road=straight===null?null:Math.round(straight*1.2),local=road!==null&&road<=60;
- const travelDays=road===null?null:local?0:p.drive?Math.max(1,Math.ceil(road/440)):1,setup=p.setup?1:0;
  const duration=s?days(s.start,s.end)+1:null;
- const tripDays=duration===null||travelDays===null?null:duration+setup+2*travelDays;
- const nights=tripDays===null?null:local?0:Math.max(0,tripDays-1);
+ const tripDays=duration;
+ const nights=duration===null||road===null?null:local?0:Math.max(0,duration-1);
  const transport=road===null?null:local||p.drive?road*2*p.mileRate:p.flight+120;
  const hotel=nights===null?null:nights*p.hotel;
  const meals=tripDays===null?null:tripDays*p.food;
  const parking=duration===null?null:duration*p.parking;
  const fee=eventFee(e,p,quotes);
  const minimum=[fee,transport,hotel,meals,parking,p.extras].filter(Number.isFinite).reduce((a,b)=>a+b,0);
- return {fee,road,local,travelDays,duration,tripDays,nights,transport,hotel,meals,parking,extras:p.extras,minimum,incomplete:fee===null||transport===null||duration===null,
- from:s&&travelDays!==null?dateAdd(s.start,-setup-travelDays):null,to:s&&travelDays!==null?dateAdd(s.end,travelDays):null};
+ return {fee,road,local,duration,tripDays,nights,transport,hotel,meals,parking,extras:p.extras,minimum,incomplete:fee===null||transport===null||duration===null,
+ from:s?s.start:null,to:s?s.end:null};
+}
+export function doctorBenchmark(e,p={allowDoctorEstimates:true}){
+ return (e.doctorHistory||[]).filter(h=>Number.isFinite(h.count)&&["physicians","dentists"].includes(h.audience)&&["reported","calculated"].includes(h.kind)&&(h.kind!=="calculated"||p.allowDoctorEstimates)).sort((a,b)=>b.year-a.year)[0]||null;
 }
 export function schedulable(e){return !!e.start&&!!e.end&&e.location==="In-state venue posted"&&Array.isArray(e.coordinates);}
 export function conflict(a,b,p){
@@ -36,11 +38,12 @@ export function matches(e,p,quotes={}){
  const why=[];if(!p.states[e.state]||!p.regions[e.region])why.push("Place excluded");
  if(!p.categories[e.category])why.push("Specialty excluded");
  if(!schedulable(e)){if(!p.includeWatch)why.push("Dates / location pending");}
- else {const t=trip(e,p,quotes);let n=stamp(t.from);for(;n<=stamp(t.to);n++)if(!p.months[iso(n).slice(0,7)]){why.push("Travel falls outside chosen months");break;}if(blocked(e,p))why.push("Overlaps your unavailable dates");}
+ else {const t=trip(e,p,quotes);let n=stamp(t.from);for(;n<=stamp(t.to);n++)if(!p.months[iso(n).slice(0,7)]){why.push("Show falls outside chosen months");break;}if(blocked(e,p))why.push("Overlaps your unavailable dates");}
  const t=trip(e,p,quotes);if(t.fee===null&&!p.includeUnknownFee)why.push("Exhibit quote needed");
  if(p.limitEvent&&t.minimum>p.maxEvent)why.push("Over event budget");
- const knownSize=e.attendance&&(!/benchmark|2025 actual|2026 organizer|annual average|annual description|typical/i.test(e.attendance.basis)||p.useHistorical);
+ const knownSize=e.attendance&&(!/benchmark|20\d{2} actual|2026 organizer|annual average|annual description|typical/i.test(e.attendance.basis)||p.useHistorical);
  if(p.requireSize){if(!knownSize&&!p.includeUnknownSize)why.push("Attendance unknown");else if(knownSize&&e.attendance.count<p.minSize)why.push("Below minimum show size");}
+ const doctors=doctorBenchmark(e,p);if(p.requireDoctors){if(!doctors)why.push("Historical doctor count not verified");else if(doctors.count<p.minDoctors)why.push("Below minimum historical doctor count");}
  return why;
 }
 export function summary(selected,p,quotes={}){
@@ -48,7 +51,7 @@ export function summary(selected,p,quotes={}){
  return {count:selected.length,scheduled:selected.filter(schedulable).length,watch:selected.filter(e=>!schedulable(e)).length,minimum:trips.reduce((s,t)=>s+t.minimum,0)+(selected.length?p.kit:0),missingFees:trips.filter(t=>t.fee===null).length,incomplete:trips.some(t=>t.incomplete),days:trips.filter(t=>t.tripDays!==null).reduce((s,t)=>s+t.tripDays,0)};
 }
 export function issues(selected,p,quotes={}){
- const out=[];for(let i=0;i<selected.length;i++){const e=selected[i];if(schedulable(e)&&blocked(e,p))out.push({ids:[e.id],type:"calendar",text:e.name+" overlaps your unavailable dates."});if(schedulable(e)&&matches(e,p,quotes).includes("Travel falls outside chosen months"))out.push({ids:[e.id],type:"calendar",text:e.name+" falls outside your available months."});for(let j=i+1;j<selected.length;j++)if(conflict(e,selected[j],p))out.push({ids:[e.id,selected[j].id],type:"calendar",text:e.name+" conflicts with "+selected[j].name+" including travel / setup / rest."});if(p.limitEvent&&trip(e,p,quotes).minimum>p.maxEvent)out.push({ids:[e.id],type:"budget",text:e.name+" exceeds your event cap."});}
+ const out=[];for(let i=0;i<selected.length;i++){const e=selected[i];if(schedulable(e)&&blocked(e,p))out.push({ids:[e.id],type:"calendar",text:e.name+" overlaps your unavailable dates."});if(schedulable(e)&&matches(e,p,quotes).includes("Show falls outside chosen months"))out.push({ids:[e.id],type:"calendar",text:e.name+" falls outside your available months."});for(let j=i+1;j<selected.length;j++)if(conflict(e,selected[j],p))out.push({ids:[e.id,selected[j].id],type:"calendar",text:e.name+" conflicts with "+selected[j].name+" including show dates and your between-show buffer."});if(p.limitEvent&&trip(e,p,quotes).minimum>p.maxEvent)out.push({ids:[e.id],type:"budget",text:e.name+" exceeds your event cap."});}
  const s=summary(selected,p,quotes);if(p.limitTotal&&s.minimum>p.maxTotal)out.push({ids:[],type:"budget",text:"Your known planning subtotal exceeds your circuit cap."});
  if(p.limitMonth){const by={};for(const e of selected.filter(schedulable)){const m=span(e,p).start.slice(0,7);(by[m]??=[]).push(e.id);}for(const [m,ids] of Object.entries(by))if(ids.length>p.maxMonth)out.push({ids,type:"calendar",text:m+" exceeds your "+p.maxMonth+"-show monthly limit."});}
  return out;
@@ -56,8 +59,8 @@ export function issues(selected,p,quotes={}){
 export function tryAdd(e,selected,p,quotes={}){
  const rest=selected.filter(x=>x.id!==e.id),collisions=rest.filter(x=>conflict(e,x,p));
  if(schedulable(e)&&blocked(e,p))return {ok:false,reason:"This trip overlaps a date you marked unavailable.",conflicts:[]};
- if(schedulable(e)&&matches(e,p,quotes).includes("Travel falls outside chosen months"))return {ok:false,reason:"This trip needs days in a month you marked unavailable. Update Your calendar first.",conflicts:[]};
- if(collisions.length)return {ok:false,reason:"One person cannot cover these trips with your current travel and setup allowance.",conflicts:collisions.map(x=>x.id)};
+ if(schedulable(e)&&matches(e,p,quotes).includes("Show falls outside chosen months"))return {ok:false,reason:"This show falls in a month you marked unavailable. Update Your calendar first.",conflicts:[]};
+ if(collisions.length)return {ok:false,reason:"One person cannot cover these shows with your current dates and between-show buffer.",conflicts:collisions.map(x=>x.id)};
  const all=[...rest,e],problems=issues(all,p,quotes).filter(x=>x.type==="budget"||x.type==="calendar"&&x.text.includes("monthly"));
  if(problems.length)return {ok:false,reason:problems[0].text,conflicts:[]};
  return {ok:true,conflicts:[]};
@@ -65,7 +68,7 @@ export function tryAdd(e,selected,p,quotes={}){
 export function toICS(selected,p){
  const esc=s=>String(s).replace(/\\/g,"\\\\").replace(/\n/g,"\\n").replace(/,/g,"\\,").replace(/;/g,"\\;");
  const lines=["BEGIN:VCALENDAR","VERSION:2.0","PRODID:-//Stoneridge//Conference Circuit//EN","CALSCALE:GREGORIAN"];
- for(const e of selected.filter(schedulable)){const t=trip(e,p);lines.push("BEGIN:VEVENT","UID:"+e.id+"-2027@stoneridge-conference-picker","DTSTAMP:20261116T120000Z","DTSTART;VALUE=DATE:"+t.from.replaceAll("-",""),"DTEND;VALUE=DATE:"+dateAdd(t.to,1).replaceAll("-",""),"SUMMARY:"+esc(e.name+" — planned trip"),"LOCATION:"+esc([e.venue,e.city,e.state].filter(Boolean).join(", ")),"DESCRIPTION:"+esc("Planning hold, not a reservation. Includes travel/setup allowance. Conference "+e.start+" through "+e.end+". "+e.url),"END:VEVENT");}
+ for(const e of selected.filter(schedulable)){const t=trip(e,p);lines.push("BEGIN:VEVENT","UID:"+e.id+"-2027@stoneridge-conference-picker","DTSTAMP:20261117T120000Z","DTSTART;VALUE=DATE:"+t.from.replaceAll("-",""),"DTEND;VALUE=DATE:"+dateAdd(t.to,1).replaceAll("-",""),"SUMMARY:"+esc(e.name+" — planned trip"),"LOCATION:"+esc([e.venue,e.city,e.state].filter(Boolean).join(", ")),"DESCRIPTION:"+esc("Planning hold, not a reservation. Arrive opening day and leave when the show ends. Hotel nights only between show days. Confirm travel and exhibitor setup hours. Conference "+e.start+" through "+e.end+". "+e.url),"END:VEVENT");}
  return lines.concat("END:VCALENDAR").join("\r\n");
 }
 export function restore(raw,events){
